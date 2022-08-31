@@ -11,7 +11,7 @@ import torch.nn as nn
 from torch.optim.lr_scheduler import LambdaLR
 from tqdm import trange
 
-from pytorch_pretrained_bert import BertForTokenClassification
+from pytorch_pretrained_bert import AutoModel
 
 from data_loader_bert import DataLoader
 from evaluate_bert import evaluate
@@ -173,7 +173,7 @@ if __name__ == '__main__':
     params.val_size = val_data['size']
 
     # Prepare model
-    model = BertForTokenClassification.from_pretrained(args.bert_model_dir, num_labels=len(params.tag2idx))
+    model = AutoModel.from_pretrained(args.bert_model_dir, num_labels=len(params.tag2idx))
     model.to(params.device)
     if args.fp16:
         model.half()
