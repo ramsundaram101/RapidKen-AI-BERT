@@ -217,4 +217,4 @@ if __name__ == '__main__':
     # Train and evaluate the model
     logging.info("Starting training for {} epoch(s)".format(params.epoch_num))
     train_and_evaluate(model, train_data, val_data, optimizer, scheduler, params, args.model_dir, args.restore_file)
-    torch.save(model, './model_bert')
+    model.save_pretrained("model_bert")
