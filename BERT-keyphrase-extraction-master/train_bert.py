@@ -11,7 +11,7 @@ import torch.nn as nn
 from torch.optim.lr_scheduler import LambdaLR
 from tqdm import trange
 
-from pytorch_pretrained_bert import BertForTokenClassification
+from transformers import BertForTokenClassification
 
 from data_loader_bert import DataLoader
 from evaluate_bert import evaluate
