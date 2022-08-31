@@ -112,7 +112,7 @@ if __name__ == '__main__':
     logging.info("- done.")
 
     # Define the model
-    config_path = os.path.join(args.bert_model_dir, 'bert_config.json')
+    config_path = os.path.join(args.bert_model_dir, 'config.json')
     config = BertConfig.from_json_file(config_path)
     model = BertForTokenClassification(config, num_labels=len(params.tag2idx))
 
