@@ -173,7 +173,7 @@ if __name__ == '__main__':
     params.val_size = val_data['size']
 
     # Prepare model
-    model = AutoModel.from_pretrained(args.bert_model_dir, num_labels=len(params.tag2idx))
+    model = BertForTokenClassification.from_pretrained(args.bert_model_dir, num_labels=len(params.tag2idx))
     model.to(params.device)
     if args.fp16:
         model.half()
