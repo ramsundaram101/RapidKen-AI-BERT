@@ -7,7 +7,8 @@ import sys
 
 import torch
 
-from pytorch_pretrained_bert import AutoTokenizer
+# from pytorch_pretrained_bert import BertTokenizer
+from transformers import AutoTokenizer
 
 import utils
 
@@ -27,6 +28,7 @@ class DataLoader(object):
         params.idx2tag = self.idx2tag
         self.tag_pad_idx = self.tag2idx['O']
 
+#         self.tokenizer = BertTokenizer.from_pretrained(bert_model_dir, do_lower_case=True)
         self.tokenizer = AutoTokenizer.from_pretrained(bert_model_dir, do_lower_case=True)
 
     def load_tags(self):
