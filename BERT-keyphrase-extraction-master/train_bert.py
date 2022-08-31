@@ -11,7 +11,7 @@ import torch.nn as nn
 from torch.optim.lr_scheduler import LambdaLR
 from tqdm import trange
 
-from pytorch_pretrained_bert import AutoModel
+from transformers import BertForTokenClassification
 
 from data_loader_bert import DataLoader
 from evaluate_bert import evaluate
@@ -217,3 +217,4 @@ if __name__ == '__main__':
     # Train and evaluate the model
     logging.info("Starting training for {} epoch(s)".format(params.epoch_num))
     train_and_evaluate(model, train_data, val_data, optimizer, scheduler, params, args.model_dir, args.restore_file)
+    model.save_pretrained('model_bert')
