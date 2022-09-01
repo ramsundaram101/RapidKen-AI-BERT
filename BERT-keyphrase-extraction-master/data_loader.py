@@ -52,6 +52,7 @@ class DataLoader(object):
                     sentences.append(self.tokenizer.convert_tokens_to_ids(tokens))
                 except:
                     print(line)
+                    break
         
         with open(tags_file, 'r') as file:
             for line in file:
