@@ -60,6 +60,7 @@ class DataLoader(object):
                 tags.append(tag_seq)
 
         # checks to ensure there is a tag for each token
+        print(len(sentences), len(tags))
         assert len(sentences) == len(tags)
         for i in range(len(sentences)):
 #             print(sentences[i], tags[i])
